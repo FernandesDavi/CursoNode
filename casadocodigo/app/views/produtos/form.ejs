@@ -1,7 +1,16 @@
 <html>
 
 <body>
-    <form action="/produtos/salva" method="POST">
+    <div class="erros">
+        <%if(errosValidacao){%>
+            <ul>
+                <%for(var i=0;i<errosValidacao.length;i++){%>
+                    <li><%=errosValidacao[i].param%> - <%=errosValidacao[i].msg%> </li>
+                 <%}%>
+            </ul>
+        <%}%>
+    </div>
+    <form action="/produtos" method="POST">
         <div>
             <label for="titulo">Titulo</label>
             <input type="text" id="tituo" name="titulo" placeholder="Coloque o Titulo do livro">
@@ -14,7 +23,7 @@
             <label for="descricao">Descrição</label>
             <textarea id="descricao" cols="20" rows="10" name="descricao" placeholder="Coloque a Descrição do livro"></textarea>
         </div>
-        <input type="submit" value="gavar"/>
+        <input type="submit" value="gavar" />
     </form>
 </body>
 
