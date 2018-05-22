@@ -11,5 +11,5 @@ http.get(config,function(res){
     console.log(res.statusCode)
     res.on('data',function(body){
         console.log('Corpo:'+body);
-    })
+    });
 });
